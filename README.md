@@ -18,12 +18,12 @@ Content
 * Partition of graph nodes. [Source](https://github.com/MengGuo/tikz_templates/blob/master/graph_states_partition/partition_graph.tex)
 
 <p align="center">  
-  <img src="https://github.com/MengGuo/tikz_templates/blob/master/graph_states_partition/partition_graph.png" width="700"/>
+  <img src="https://github.com/MengGuo/tikz_templates/blob/master/graph_states_partition/partition_graph.png" height="700"/>
 </p>
 
 * Square black and white 7*7 grid logo. [Source](https://github.com/MengGuo/tikz_templates/blob/master/logo_square/logo_square.tex)
 
 
 <p align="center">  
-  <img src="https://github.com/MengGuo/tikz_templates/blob/master/logo_square/logo_square.png" width="700"/>
+  <img src="https://github.com/MengGuo/tikz_templates/blob/master/logo_square/logo_square.png" width="300"/>
 </p>
