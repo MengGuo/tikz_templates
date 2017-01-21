@@ -1,0 +1,205 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{4pt}
+
+\usetikzlibrary{arrows.meta}
+
+\usepackage{lmodern} 
+\tikzset{>=latex}
+
+
+
+\tikzstyle{waypoint}=[fill, black, circle,inner sep=1.2pt,scale=1.6]
+\tikzstyle{region}=[fill, gray, circle,scale=1.1]
+
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+
+
+
+% http://www.getreuer.info/tutorials/tikz
+% http://tex.stackexchange.com/questions/33607/easy-curves-in-tikz
+% http://tex.stackexchange.com/questions/18200/draw-edges-and-paths-in-the-background-of-nodes-in-tikz
+
+\begin{document}
+
+\begin{tikzpicture}[auto, thick]
+
+
+%% \draw [step=1.0,thin,gray!40] (-5,0) grid (5,5);
+%% \draw [->] (-5,0) -- (5,0) node [below] {$x$};
+%% \draw [->] (0,0) -- (0,5) node [left] {$y$};
+
+
+% robot 1 path
+\node (r11) at (-5.4,0) [region] {};
+\node (r12) at (-5.4,1.0) [waypoint] {};
+\node (r13) at (-5.4,1.7) [region] {};
+\node (r14) at (-5.4,2.2) [waypoint] {};
+\node (r15) at (-4.3,2.2) [waypoint] {};
+\node (r16) at (-3.5,2.2) [region] {};
+\node (r17) at (-2.8,2.2) [waypoint] {};
+\node (r18) at (-1.5,2.2) [region] {};
+\node (r19) at (-1,2.2) [waypoint] {};
+\node (r110) at (-1,1.5) [waypoint] {};
+\node (r111) at (-1,0.8) [region] {};
+\node (r112) at (-1,0) [waypoint] {};
+\node (r113) at (-2.3,0) [waypoint] {};
+\node (r114) at (-3.7,0) [region] {};
+\node (r115) at (-4.2,0) [waypoint] {};
+\node (r116) at (-4.5,0) [waypoint] {};
+
+
+%% \draw [green, thick, opacity=0.8, line width=0.7mm] 
+%%    (r11) -- (r110) -- (r12) -- (r13) -- (r14) -- (r15) -- (r16) -- (r111) -- (r17) -- (r112) -- (r18)  -- (r19) -- (r11);
+
+\begin{pgfonlayer}{bg}
+
+\draw [green, thick, opacity=0.8, line width=1.0mm] (r11) -- (r12) -- (r13) -- (r14) -- (r15) -- (r16) -- (r17) -- (r18) -- (r19) -- (r110) -- (r111) -- (r112) -- (r113) -- (r114) -- (r115) -- (r116) -- (r11);
+
+\end{pgfonlayer}
+
+
+% robot 2 path
+\node (r21) at (-2.4,3) [waypoint] {};
+\node (r22) at (-2.4,3.7) [waypoint] {};
+\node (r23) at (-2.4,4.2) [waypoint] {};
+\node (r24) at (-2.4,5.2) [region] {};
+\node (r25) at (-2,5.2) [waypoint] {};
+\node (r26) at (-1.1,5.2) [waypoint] {};
+\node (r27) at (-0.1,5.2) [waypoint] {};
+\node (r28) at (0.5,5.2) [region] {};
+\node (r29) at (2,5.2) [waypoint] {};
+\node (r210) at (2,4.5) [region] {};
+\node (r211) at (2,3.5) [waypoint] {};
+\node (r212) at (2,3) [waypoint] {};
+\node (r213) at (1.5,3) [region] {};
+\node (r214) at (0.7,3) [waypoint] {};
+\node (r215) at (-1.2,3) [region] {};
+\node (r216) at (-1.8,3) [waypoint] {};
+
+
+%% \draw [green, thick, opacity=0.8, line width=0.7mm] 
+%%    (r21) -- (r210) -- (r22) -- (r23) -- (r24) -- (r25) -- (r26) -- (r211) -- (r27) -- (r212) -- (r28)  -- (r29) -- (r21);
+
+\begin{pgfonlayer}{bg}
+
+\draw [orange, thick, opacity=0.8, line width=1.0mm] (r21) -- (r22) -- (r23) -- (r24) -- (r25) -- (r26) -- (r27) -- (r28) -- (r29) -- (r210) -- (r211) -- (r212) -- (r213) -- (r214) -- (r215) -- (r216) -- (r21);
+
+\end{pgfonlayer}
+
+
+
+% robot 3 path
+\node (r31) at (0,0) [waypoint] {};
+\node (r32) at (0,0.6) [region] {};
+\node (r33) at (0,1.2) [waypoint] {};
+\node (r34) at (0,2.2) [region] {};
+\node (r35) at (0.4,2.2) [waypoint] {};
+\node (r36) at (1.3,2.2) [region] {};
+\node (r37) at (2.8,2.2) [waypoint] {};
+\node (r38) at (3.9,2.2) [region] {};
+\node (r39) at (4.4,2.2) [waypoint] {};
+\node (r310) at (4.4,1.5) [waypoint] {};
+\node (r311) at (4.4,0.6) [region] {};
+\node (r312) at (4.4,0) [waypoint] {};
+\node (r313) at (3.1,0) [region] {};
+\node (r314) at (1.7,0) [waypoint] {};
+\node (r315) at (1.2,0) [region] {};
+\node (r316) at (0.6,0) [waypoint] {};
+
+
+%% \draw [green, thick, opacity=0.8, line width=0.7mm] 
+%%    (r31) -- (r310) -- (r32) -- (r33) -- (r34) -- (r35) -- (r36) -- (r311) -- (r37) -- (r312) -- (r38)  -- (r39) -- (r31);
+
+\begin{pgfonlayer}{bg}
+
+\draw [magenta, thick, opacity=0.8, line width=1.0mm] (r31) -- (r32) -- (r33) -- (r34) -- (r35) -- (r36) -- (r37) -- (r38) -- (r39) -- (r310) -- (r311) -- (r312) -- (r313) -- (r314) -- (r315) -- (r316) -- (r31);
+
+\end{pgfonlayer}
+
+
+
+% robot 4 path
+
+\draw[-Kite, blue, line width=.05cm] (-4.7,0.6) - - (-4.7,0.1) ;
+\node (r40) at (-4.5,0) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (-4.5,2.8) - - (-4.5,2.3) ;
+\node (r48) at (-4.3,2.2) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (-3,2.8) - - (-3,2.3) ;
+\node (r41) at (-2.8,2.2) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (-2.7,4.3) - - (-2.7,3.8) ;
+\node (r46) at (-2.4,3.7) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (-0.1,3.7) - - (-0.1,3.2) ;
+\node (r42) at (-0.1,3) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (0.6,2.8) - - (0.6,2.3) ;
+\node (r43) at (0.4,2.2) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (1.7,0.7) - - (1.7,0.2) ;
+\node (r45) at (1.7,0) [waypoint] {};
+
+\draw[-Kite, blue, line width=.05cm] (4.1,2) - - (4.1,1.5) ;
+\node (r47) at (4.4,1.5) [waypoint] {};
+
+\begin{pgfonlayer}{bg}
+\draw [blue, opacity=0.8, double, line width=0.5mm] plot [smooth] coordinates { (r40) (r48) (r41) (r46) (r42) (r43) (r45) (r47)};
+\end{pgfonlayer}
+
+
+
+% robot 5 path
+
+\draw[-Kite, red, line width=.05cm] (-1.2,5.1) - - (-1.2,4.6) ;
+\node (r51) at (-1.1,5.2) [waypoint] {};
+
+\draw[-Kite, red, line width=.05cm] (2.2,4.1) - - (2.2,3.6) ;
+\node (r52) at (2,3.5) [waypoint] {};
+
+\draw[-Kite, red, line width=.05cm] (3.1,2.8) - - (3.1,2.3) ;
+\node (r53) at (2.8,2.2) [waypoint] {};
+
+\draw[-Kite, red, line width=.05cm] (-0.2,1.8) - - (-0.2,1.3) ;
+\node (r54) at (0,1.2) [waypoint] {};
+
+\draw[-Kite, red, line width=.05cm] (-1.2,2.0) - - (-1.2,1.5) ;
+\node (r55) at (-1,1.5) [waypoint] {};
+
+\draw[-Kite, red, line width=.05cm] (-2.3,0.7) - - (-2.3,0.2) ;
+\node (r56) at (-2.3,0) [waypoint] {};
+
+\draw[-Kite, red, line width=.05cm] (-5.6,1.5) - - (-5.6,1.0) ;
+\node (r57) at (-5.4,1.0) [waypoint] {};
+
+
+
+\begin{pgfonlayer}{bg}
+\draw [red, opacity=0.8,thick, double, line width=0.5mm] plot [smooth] coordinates { (r51) (r52) (r53) (r54) (r55) (r56) (r57)};
+\end{pgfonlayer}
+
+
+\node[rectangle, fill=magenta, opacity=0.8, minimum width=0.7cm, minimum height=0.4cm] at (-5.1,5){$\mathcal{R}_1$};
+\node[rectangle, fill=green, opacity=0.8, minimum width=0.7cm, minimum height=0.4cm] at (-5.1,4.4){$\mathcal{R}_2$};
+\node[rectangle, fill=orange, opacity=0.8, minimum width=0.7cm, minimum height=0.4cm] at (-5.1,3.8){$\mathcal{R}_3$};
+\node[label=right:$\textbf{Source}$] at (-5.7,3.2){};
+\draw[line width=0.3mm] (-5.6,3) rectangle (-3.5,5.4);
+
+
+\node[rectangle, fill=blue, opacity=0.8, minimum width=0.7cm, minimum height=0.4cm] at (-4.2,5){$\mathcal{R}_4$};
+\node[rectangle, fill=red, opacity=0.8, minimum width=0.7cm, minimum height=0.4cm] at (-4.2,4.4){$\mathcal{R}_5$};
+\node[label=right:$\textbf{Relay}$] at (-4.8,3.8){};
+
+\node[waypoint,label=right:\LARGE$m_{i,\ell}$] at (3.4,4.8){};
+\node[region,label=right:\LARGE$\pi_{i,\ell}$] at (3.4,4.1){};
+\draw[line width=0.3mm] (3,3.8) rectangle (4.7,5.2);
+
+\end{tikzpicture}
+
+\end{document}
