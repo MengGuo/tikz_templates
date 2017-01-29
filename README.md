@@ -32,5 +32,5 @@ Content
 
 
 <p align="center">  
-  <img src="https://github.com/MengGuo/tikz_templates/blob/master/multi_path/multi_path.png" width="300"/>
+  <img src="https://github.com/MengGuo/tikz_templates/blob/master/multi_path/multi_path.png" width="700"/>
 </p>
