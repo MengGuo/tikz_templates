@@ -27,3 +27,10 @@ Content
 <p align="center">  
   <img src="https://github.com/MengGuo/tikz_templates/blob/master/logo_square/logo_square.png" width="300"/>
 </p>
+
+* Intersection of paths. [\[Source\]](https://github.com/MengGuo/tikz_templates/blob/master/multi_path/multi_path.tex)
+
+
+<p align="center">  
+  <img src="https://github.com/MengGuo/tikz_templates/blob/master/multi_path/multi_path.png" width="300"/>
+</p>
