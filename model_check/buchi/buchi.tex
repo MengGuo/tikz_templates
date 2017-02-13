@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{4pt}
+
+
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+
+% http://www.texample.net/tikz/examples/state-machine/
+
+
+\begin{document}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,semithick]
+
+  \node[initial,state] (init)                    {$q_0$};
+  \node[state]         (2) [below left of=init] {$q_2$};
+  \node[state,accepting]         (1) [below right of=init] {$q_1$};
+
+  \path (init) edge   [bend right,right]           node {$r_3\wedge r_2 \wedge \neg r_1$} (1)
+               edge  [left]            node {$r_3 \wedge \neg r_1$} (2)
+               edge  [loop above]       node {$\neg r_1$} (init)
+        (2) edge [loop left] node {$\neg r_1$} (2)
+            edge   [bend right]           node {$r_2 \wedge \neg r_1$} (1)
+        (1) edge  [in=-30,out=-60, loop] 
+                node[below]       {$r_3\wedge r_2 \wedge \neg r_1$} (1)
+            edge    [bend right,out=0, in=-150]      node {$r_3 \wedge \neg r_1$} (2)
+            edge    [bend right,right]      node {$\neg r_1$} (init);
+
+
+\end{tikzpicture}
+
+\end{document}

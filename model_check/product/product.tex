@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{4pt}
+
+
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+
+% http://www.texample.net/tikz/examples/state-machine/
+
+
+\begin{document}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,semithick]
+
+  \node[initial,state] (init)                    {$(s_0,q_0)$};
+  \node[state]         (1) [below left of=init] {$(s_1,q_0)$};
+  \node[state,accepting]         (2) [below right of=init] {$(s_2,q_1)$};
+  \node[state]         (3) [below right of=1] {$(s_3,q_0)$};
+  \node[state]         (4) [right of=3] {$(s_2,q_2)$};
+  \node[state,accepting]         (5) [right of=2] {$(s_3,q_1)$};
+
+  \path (init) edge              node  {}(1)
+               edge              node  {}(3)
+               edge   [loop above]           node  {}(init);
+
+
+  \path (3) edge              node  {}(4)
+               edge   [loop left]           node  {}(3);
+
+  \path (4) edge              node  {}(2)
+            edge     [bend right,right]         node  {}(5)
+               edge   [loop right]           node  {}(4);
+
+  \path (2) edge              node  {}(init)
+               edge             node  {}(3);
+
+  \path (5)    edge  [bend right,right]           node  {}(4);
+
+
+
+
+
+
+
+\end{tikzpicture}
+
+\end{document}
