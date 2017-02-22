@@ -34,3 +34,11 @@ Content
 <p align="center">  
   <img src="https://github.com/MengGuo/tikz_templates/blob/master/multi_path/multi_path.png" width="700"/>
 </p>
+
+
+* Model checking examples. [\[Source\]](https://github.com/MengGuo/tikz_templates/tree/master/model_check)
+
+
+<p align="center">  
+  <img src="https://github.com/MengGuo/tikz_templates/blob/master/model_check/product/model_check.png" width="700"/>
+</p>
